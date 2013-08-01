@@ -30,7 +30,7 @@ You can add several more routes as a first parameter, for exemple :
 echo Active::link(array('users', 'user/add', 'user/edit'), URL::to('users'), 'Show all users');
 ```
 	
-You can also use `*` as a pattern or exclude routes with `not:`
+You can also use `*` as a pattern or exclude routes with `not:`, for exemple :
 
 ```php
 echo Active::link(array('user*','not:user/edit'), URL::to('users'), 'Show all users');
