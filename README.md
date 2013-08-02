@@ -46,4 +46,12 @@ Set your own attributes if you wish:
 echo Active::link(array('group*','not:groups*'), URL::to('group'), 'Show group', array('id' => 'mycustomid'));
 ```
 
+You can also only get the current state (boolean)
+
+Set your own attributes if you wish:
+
+```php
+$state = Active::is(array('page*','not:pages*'));
+```
+
 
