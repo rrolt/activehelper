@@ -49,7 +49,7 @@ echo Active::link(array('group*','not:groups*'), URL::to('group'), 'Show group',
 You can also only get the current state (boolean)
 
 ```php
-$state = Active::is(array('page*','not:pages*'));
+$state = Active::is('page*','not:pages*');
 ```
 
 
