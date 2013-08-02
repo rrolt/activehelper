@@ -1,7 +1,7 @@
 {
     "name": "digithis/activehelper",
     "type": "helper",
-    "description": "active helper is a simple active status system for your links in laravel 4",
+    "description": "Active helper is a simple active state system for your links in laravel 4",
     "keywords": ["active","links","laravel","laravel 4"],
     "homepage": "http://github.com/digithis/activehelper",
     "license": "MIT",
