@@ -36,21 +36,38 @@ class Activehelper {
 	*/
 	public function link($routes, $url, $value = '', $attributes = array('class' => 'active'))
 	{
-		$this->request = Request::path();
-
 		if(empty($value))
 		{
 			$value = $url;
 		}
 
+		$output = '<a href="'.$url.'"';
+
+		if($this->is($routes))
+		{
+			$output.= $this->putAttributes($attributes);
+		}
+
+		$output.= '>'.$value.'</a>';
+		
+		return $output;
+	}
+
+	/**
+	 * Get current state.
+	 *
+	 * @param array $routes
+	 * @param boolean 
+	 */
+	public function is($routes)
+	{
+		$this->request = Request::path();
+
 		if(!is_array($routes))
 		{
 			$routes = array($routes);
 		}
-
 		$this->parseRoutes($routes);
-
-		$output = '<a href="'.$url.'"';
 
 		foreach($this->routes as $route)
 		{
@@ -63,17 +80,12 @@ class Activehelper {
 			{
 				if(str_is($bad_route, $this->request))
 				{
-					continue 2;
+					return false;
 				}
 			}
-
-			$output.= $this->putAttributes($attributes);
-			break;
+			return true;		
 		}
-
-		$output.= '>'.$value.'</a>';
-
-		return $output;
+	    return false;
 	}
 
 	/**
@@ -95,9 +107,7 @@ class Activehelper {
 
 				unset($this->routes[$r]);
 			}
-
 		}
-
 	}
 
 	/**
