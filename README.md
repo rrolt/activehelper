@@ -17,7 +17,7 @@ In the `aliases` array, add the following line
 	'Active'  => 'Digithis\Activehelper\ActiveFacade',
 	
 ###How to use
-Create a link and its current state :
+**Create a link and its current state :**
 
 ```php
 echo Active::link('users', URL::to('users'), 'Show all users');
@@ -25,14 +25,14 @@ echo Active::link('users', URL::to('users'), 'Show all users');
 This means that if the current request is `users`, class for link is `.active`
 
 
-Add several more routes as a first parameter :
+**Add several more routes as a first parameter :**
 
 ```php
 echo Active::link(array('users', 'user/add', 'user/edit'), URL::to('users'), 'Show all users');
 ```
 
 
-Use `*` as a pattern or exclude routes with `not:` :
+**Use `*` **as a pattern or exclude routes with** `not:` **:**
 
 ```php
 echo Active::link(array('user*','not:user/edit'), URL::to('users'), 'Show all users');
@@ -40,7 +40,7 @@ echo Active::link(array('user*','not:user/edit'), URL::to('users'), 'Show all us
 This means that if the request begins with `user` but is not `user/edit`, class for link is `.active`
 
 
-Set your own attributes if you wish :
+**Set your own attributes if you wish**:
 
 ```php
 echo Active::link(array('group*','not:groups*'), URL::to('group'), 'Show group', array('id' => 'mycustomid'));
