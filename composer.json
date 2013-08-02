@@ -1,17 +1,17 @@
 {
     "name": "digithis/activehelper",
+    "type": "helper",
     "description": "active helper is a simple active status system for your links in laravel 4",
+    "keywords": ["active","links"],
+    "homepage": "http://github.com/digithis/activehelper",
     "license": "MIT",
     "authors": [
         {
-            "name": "digithis",
-            "email": "rolletremi@gmail.com"
+            "name": "Digithis",
+            "email": "rolletremi@gmail.com",
+            "role": "Developer"
         }
     ],
-    "repositories": [{
-        "type": "composer",
-        "url": "http://packages.cartalyst.com"
-    }], 
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "4.0.x"
