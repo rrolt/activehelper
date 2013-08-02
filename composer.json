@@ -1,7 +1,7 @@
 {
     "name": "digithis/activehelper",
     "description": "active helper is a simple active status system for your links in laravel 4",
-    "license": "BSD-2-Clause",
+    "license": "MIT",
     "authors": [
         {
             "name": "digithis",
