@@ -56,7 +56,6 @@ class Activehelper {
 	/**
 	 * Get current state.
 	 *
-	 * @param array $routes
 	 * @return boolean 
 	 */
 	public function is()
@@ -73,7 +72,6 @@ class Activehelper {
 			{
 				$this->routes[] = $p;
 			}
-
 		}
 
 		$this->request = Request::path();
