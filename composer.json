@@ -8,6 +8,10 @@
             "email": "rolletremi@gmail.com"
         }
     ],
+    "repositories": [{
+        "type": "composer",
+        "url": "http://packages.cartalyst.com"
+    }], 
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "4.0.x"
