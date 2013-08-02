@@ -43,7 +43,7 @@ Which means that if the request starts with `user` but is not `user/edit`, the l
 You can also set your own attributes if you want, for exemple :
 
 ```php
-echo Active::link(array('group*','not:groups*'), URL::to('group'), 'Show group', array('id' => 'mycustomclass');
+echo Active::link(array('group*','not:groups*'), URL::to('group'), 'Show group', array('id' => 'mycustomid'));
 ```
 
 
