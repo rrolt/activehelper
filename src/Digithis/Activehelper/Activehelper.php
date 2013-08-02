@@ -4,8 +4,25 @@ use Request;
 
 class Activehelper {
 
+	/**
+	* Current request path.
+	*
+	* @var string
+	*/
 	protected $request;
+
+	/**
+	* Routes to exclude.
+	*
+	* @var array
+	*/
 	protected $bad_routes = array();
+
+	/**
+	* Routes to check.
+	*
+	* @var array
+	*/
 	protected $routes = array();
 
 	/**
@@ -87,7 +104,7 @@ class Activehelper {
 	* Attributes to string.
 	*
 	* @param array $attributes
-	* @return void
+	* @return string
 	*/
 	private function putAttributes($attributes)
 	{
