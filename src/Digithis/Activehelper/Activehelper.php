@@ -59,15 +59,26 @@ class Activehelper {
 	 * @param array $routes
 	 * @return boolean 
 	 */
-	public function is($routes)
+	public function is()
 	{
+		foreach(func_get_args() as $param)
+		{
+			if(!is_array($param))
+			{
+				$this->routes[] = $param;
+				continue;
+			}
+
+			foreach ($param as $p) 
+			{
+				$this->routes[] = $p;
+			}
+
+		}
+
 		$this->request = Request::path();
 
-		if(!is_array($routes))
-		{
-			$routes = array($routes);
-		}
-		$this->parseRoutes($routes);
+		$this->parseRoutes();
 
 		foreach($this->routes as $route)
 		{
@@ -83,9 +94,11 @@ class Activehelper {
 					return false;
 				}
 			}
+
 			return true;		
 		}
-	    return false;
+
+		return false;
 	}
 
 	/**
@@ -94,15 +107,14 @@ class Activehelper {
 	* @param array $route
 	* @return void
 	*/
-	private function parseRoutes($routes)
+	private function parseRoutes()
 	{
-		$this->routes = $routes;
-
-		foreach($routes as $r => $route)
+		foreach($this->routes as $r => $route)
 		{
 			if (strpos($route, 'not:') !== false)
 			{
 				$bad_route =  substr($route, strpos($route, "not:")+4);
+
 				$this->bad_routes[] = $bad_route;
 
 				unset($this->routes[$r]);
