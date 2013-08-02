@@ -57,7 +57,7 @@ class Activehelper {
 	 * Get current state.
 	 *
 	 * @param array $routes
-	 * @param boolean 
+	 * @return boolean 
 	 */
 	public function is($routes)
 	{
