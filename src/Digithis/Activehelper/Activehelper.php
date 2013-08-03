@@ -16,14 +16,14 @@ class Activehelper {
 	*
 	* @var array
 	*/
-	protected $bad_routes = array();
+	protected $bad_routes;
 
 	/**
 	* Routes to check.
 	*
 	* @var array
 	*/
-	protected $routes = array();
+	protected $routes;
 
 	/**
 	* Generate link with active state.
@@ -34,6 +34,7 @@ class Activehelper {
 	* @param array $attributes
 	* @return string
 	*/
+
 	public function link($routes, $url, $value = '', $attributes = array('class' => 'active'))
 	{
 		if(empty($value))
@@ -49,7 +50,7 @@ class Activehelper {
 		}
 
 		$output.= '>'.$value.'</a>';
-		
+
 		return $output;
 	}
 
@@ -60,6 +61,8 @@ class Activehelper {
 	 */
 	public function is()
 	{
+		$this->routes = array(); 
+
 		foreach(func_get_args() as $param)
 		{
 			if(!is_array($param))
@@ -107,6 +110,8 @@ class Activehelper {
 	*/
 	private function parseRoutes()
 	{
+		$this->bad_routes = array();
+		
 		foreach($this->routes as $r => $route)
 		{
 			if (strpos($route, 'not:') !== false)
