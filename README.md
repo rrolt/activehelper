@@ -52,4 +52,11 @@ You can also only get the current state (boolean)
 $state = Active::is('page*','not:pages*');
 ```
 
+And return the active class if the routes are matched
+
+```php
+Active::classes('page*', 'not:pages*');
+
+// Returns 'active'
+```
 
