@@ -103,6 +103,21 @@ class Activehelper {
 	}
 
 	/**
+	 * Returns active classes if route is matched
+	 *
+	 * @return mixed
+	 */
+	public function classes($routes)
+	{
+		if ($this->is($routes))
+		{
+			return 'active';
+		}
+
+		return false;
+	}
+
+	/**
 	* Separate routes in clean routes and excluded routes.
 	*
 	* @param array $route
